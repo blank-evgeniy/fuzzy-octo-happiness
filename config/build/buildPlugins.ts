@@ -1,4 +1,3 @@
-import path from "path";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
@@ -20,5 +19,6 @@ export default function buildPlugins({
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
