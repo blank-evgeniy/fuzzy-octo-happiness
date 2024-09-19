@@ -3,5 +3,7 @@
   "current language": "русский",
   "nav about": "О сайте",
   "nav main": "Главная",
-  "the page was not found": "страница не найдена"
+  "the page was not found": "страница не найдена",
+  "An unexpected error has occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Обновить страницу"
 }

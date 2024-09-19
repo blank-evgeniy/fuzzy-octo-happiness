@@ -4,5 +4,7 @@
   "Title": "Title",
   "nav main": "Main",
   "nav about": "About",
-  "the page was not found": "Page not found"
+  "the page was not found": "Page not found",
+  "An unexpected error has occurred": "An unexpected error has occurred",
+  "Reload page": "Reload page"
 }
