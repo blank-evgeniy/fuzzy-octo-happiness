@@ -1,0 +1,16 @@
+.IconLink {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.content {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  margin-left: 8px;
+}
+.content.short {
+  opacity: 0;
+  width: 0;
+}

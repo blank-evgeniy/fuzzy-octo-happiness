@@ -9,8 +9,20 @@
   transition: width 0.3s ease-in;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
 .collapsed {
   width: var(--sidebar-collapsed-width);
+
+  .switchers {
+    flex-direction: column;
+  }
 }
 
 .switchers {
@@ -20,9 +32,15 @@
   width: 100%;
 
   display: flex;
+  align-items: center;
   justify-content: center;
+
+  gap: 16px;
 }
 
-.language_switcher {
-  margin-left: 20px;
+.collapseBtn {
+  position: absolute;
+  right: calc(-1 * var(--size-m) / 2);
+  bottom: var(--size-m);
+  border-radius: 50%;
 }

@@ -8,7 +8,7 @@ export enum AppLinkTheme {
   BUTTON = "button",
 }
 
-interface AppLinkProps extends LinkProps {
+export interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
