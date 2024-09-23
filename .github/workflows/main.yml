@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -25,7 +25,7 @@ jobs:
         run: npm run eslint
       - name: unit testing
         run: npm run test:unit
-      - name: build storybool
+      - name: build storybook
         run: npm run build-storybook
       - name: screenshot testing
         run: npm run test:ui:ci
