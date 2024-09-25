@@ -2,7 +2,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./Modal.module.scss";
-import Portal from "../Portal/Portal";
 
 interface ModalProps {
   className?: string;
@@ -57,15 +56,15 @@ const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   return (
-    <Portal>
-      <div className={classNames(styles.Modal, mods, [className])}>
-        <div className={styles.overlay} onClick={closeHandler}>
-          <div className={styles.content} onClick={onContentClick}>
-            {children}
-          </div>
+    // <Portal>
+    <div className={classNames(styles.Modal, mods, [className])}>
+      <div className={styles.overlay} onClick={closeHandler}>
+        <div className={styles.content} onClick={onContentClick}>
+          {children}
         </div>
       </div>
-    </Portal>
+    </div>
+    // </Portal>
   );
 };
 
