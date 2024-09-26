@@ -1,0 +1,25 @@
+.InputWrapper {
+  display: flex;
+}
+
+.placeholder {
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 0 8px;
+  border-radius: 4px;
+
+  background: var(--bg-color-accent);
+  color: white;
+
+  border: none;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}

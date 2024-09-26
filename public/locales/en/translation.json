@@ -8,5 +8,8 @@
   "An unexpected error has occurred": "An unexpected error has occurred",
   "Reload page": "Reload page",
   "current language_short": "en",
-  "login": "log in"
+  "login": "log in",
+  "Log in": "Log in",
+  "Enter username": "Enter username",
+  "Enter password": "Enter password"
 }
