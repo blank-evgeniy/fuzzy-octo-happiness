@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import MainPage from "./MainPage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
 
 const meta = {
   title: "pages/MainPage",
@@ -11,6 +12,7 @@ const meta = {
   parameters: {},
 
   tags: ["autodocs"],
+  decorators: [StoreDecorator({})],
 } satisfies Meta<typeof MainPage>;
 
 export default meta;

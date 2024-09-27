@@ -10,6 +10,9 @@
   "current language_short": "en",
   "login": "log in",
   "Log in": "Log in",
-  "Enter username": "Enter username",
-  "Enter password": "Enter password"
+  "Enter username": "Username",
+  "Enter password": "Password",
+  "Authorization form": "Authorization form",
+  "You entered an incorrect username or password": "You entered an incorrect username or password",
+  "logout": "log out"
 }

@@ -1,5 +1,6 @@
 import path from "path";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
+import { DefinePlugin } from "webpack";
 
 export default ({ config }) => {
   config.resolve.modules.push(path.resolve(__dirname, "..", "..", "src"));
@@ -19,6 +20,12 @@ export default ({ config }) => {
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
+
+  config.plugins.push(
+    new DefinePlugin({
+      IS_DEV: true,
+    })
+  );
 
   return config;
 };
