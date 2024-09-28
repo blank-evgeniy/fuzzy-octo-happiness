@@ -46,7 +46,12 @@ const Navbar = ({ className }: NavbarProps) => {
       <Button className={styles.link} onClick={handleOpenModal}>
         {t("login")}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={handleCloseModal}></LoginModal>
+      {isAuthModal && (
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={handleCloseModal}
+        ></LoginModal>
+      )}
     </div>
   );
 };
