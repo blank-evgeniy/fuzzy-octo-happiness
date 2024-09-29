@@ -8,10 +8,10 @@ import { memo, useCallback } from "react";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import Text, { TextTheme } from "shared/ui/Text/Text";
-import { getLoginUsername } from "features/AuthByUthername/model/selectors/getLoginUsername";
-import { getLoginPassword } from "features/AuthByUthername/model/selectors/getLoginPassword";
-import { getLoginError } from "features/AuthByUthername/model/selectors/getLoginError";
-import { getLoginIsLoading } from "features/AuthByUthername/model/selectors/getLoginIsLoading";
+import { getLoginUsername } from "features/AuthByUthername/model/selectors/getLoginUsername/getLoginUsername";
+import { getLoginPassword } from "features/AuthByUthername/model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginError } from "features/AuthByUthername/model/selectors/getLoginError/getLoginError";
+import { getLoginIsLoading } from "features/AuthByUthername/model/selectors/getLoginIsLoading/getLoginIsLoading";
 import DynamicModuleLoader, {
   ReducersList,
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
