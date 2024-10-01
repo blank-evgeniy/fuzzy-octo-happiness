@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: <Icon />,
+    Icon: Icon,
     children: "Link",
   },
 };

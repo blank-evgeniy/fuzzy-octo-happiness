@@ -1,15 +1,13 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LanguageSwitcher } from "widgets/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import IconLink from "shared/ui/IconLink/IconLink";
 
-import HomeIcon from "shared/assets/icons/main-link.svg";
-import AboutIcon from "shared/assets/icons/about-link.svg";
-
 import styles from "./Sidebar.module.scss";
+import { SidebarItemsList } from "widgets/Sidebar/model/items";
 
 interface SidebarProps {
   className?: string;
@@ -24,6 +22,21 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
     setCollapsed((prev) => !prev);
   };
 
+  const itemsList = useMemo(
+    () =>
+      SidebarItemsList.map((item) => (
+        <IconLink
+          Icon={item.icon}
+          short={collapsed}
+          to={item.path}
+          key={item.path}
+        >
+          {t(item.text)}
+        </IconLink>
+      )),
+    [collapsed]
+  );
+
   return (
     <div
       data-testid="sidebar"
@@ -31,14 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
         className,
       ])}
     >
-      <div className={styles.items}>
-        <IconLink icon={<HomeIcon />} short={collapsed} to={"/"}>
-          {t("nav main")}
-        </IconLink>
-        <IconLink icon={<AboutIcon />} short={collapsed} to={"/about"}>
-          {t("nav main")}
-        </IconLink>
-      </div>
+      <div className={styles.items}>{itemsList}</div>
       <Button
         data-testid="sidebar-toggle"
         onClick={onToggle}
