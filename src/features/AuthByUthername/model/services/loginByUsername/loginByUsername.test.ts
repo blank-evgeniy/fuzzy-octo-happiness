@@ -1,11 +1,6 @@
-import axios from "axios";
 import { loginByUsername } from "./loginByUsername";
 import { userActions } from "entities/User";
 import { TestAsyncThunc } from "shared/lib/tests/TestAsyncThunk/TestAsyncThynk";
-
-jest.mock("axios");
-
-const mockedAxios = jest.mocked(axios);
 
 describe("login by username", () => {
   //   let dispatch: Dispatch;
@@ -44,28 +39,27 @@ describe("login by username", () => {
 
   test("fulfilled", async () => {
     const userValue = { username: "123", id: "1" };
-    mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
-    const thunc = new TestAsyncThunc(loginByUsername);
-    const result = await thunc.callThunc({ username: "123", password: "123" });
+    const thunk = new TestAsyncThunc(loginByUsername);
+    thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
+    const result = await thunk.callThunc({ username: "123", password: "123" });
 
-    expect(thunc.dispatch).toHaveBeenCalledWith(
+    expect(thunk.dispatch).toHaveBeenCalledWith(
       userActions.setAuthData(userValue)
     );
-    expect(thunc.dispatch).toHaveBeenCalledTimes(3);
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.dispatch).toHaveBeenCalledTimes(3);
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe("fulfilled");
     expect(result.payload).toEqual(userValue);
   });
 
   test("rejected", async () => {
-    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
+    const thunk = new TestAsyncThunc(loginByUsername);
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
+    const result = await thunk.callThunc({ username: "123", password: "123" });
 
-    const thunc = new TestAsyncThunc(loginByUsername);
-    const result = await thunc.callThunc({ username: "123", password: "123" });
-
-    expect(thunc.dispatch).toHaveBeenCalledTimes(2);
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe("rejected");
     expect(result.payload).toBe(
       "You entered an incorrect username or password"

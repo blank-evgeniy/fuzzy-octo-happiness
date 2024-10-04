@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, StyleMods } from "shared/lib/classNames/classNames";
 import styles from "./Button.module.scss";
 import React, { ButtonHTMLAttributes, memo } from "react";
 
@@ -31,7 +31,7 @@ const Button = memo((props: ButtonProps) => {
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: StyleMods = {
     [styles.square]: square,
   };
 
