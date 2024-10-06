@@ -8,6 +8,8 @@ import IconLink from "shared/ui/IconLink/IconLink";
 
 import styles from "./Sidebar.module.scss";
 import { SidebarItemsList } from "widgets/Sidebar/model/items";
+import { useSelector } from "react-redux";
+import { getUserAuthData } from "entities/User";
 
 interface SidebarProps {
   className?: string;
@@ -18,23 +20,27 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
 
   const [collapsed, setCollapsed] = useState(false);
 
+  const isAuth = useSelector(getUserAuthData);
+
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
 
   const itemsList = useMemo(
     () =>
-      SidebarItemsList.map((item) => (
-        <IconLink
-          Icon={item.icon}
-          short={collapsed}
-          to={item.path}
-          key={item.path}
-        >
-          {t(item.text)}
-        </IconLink>
-      )),
-    [collapsed]
+      SidebarItemsList.filter((item) => !(item.authOnly && !isAuth)).map(
+        (item) => (
+          <IconLink
+            Icon={item.icon}
+            short={collapsed}
+            to={item.path}
+            key={item.path}
+          >
+            {t(item.text)}
+          </IconLink>
+        )
+      ),
+    [collapsed, isAuth]
   );
 
   return (

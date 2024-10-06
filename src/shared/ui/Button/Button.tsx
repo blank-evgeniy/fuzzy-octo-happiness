@@ -5,6 +5,8 @@ import React, { ButtonHTMLAttributes, memo } from "react";
 export enum ButtonTheme {
   CLEAR = "clear",
   PRIMARY = "primary",
+  DANGER = "danger",
+  OUTLINE = "outline",
   INHERIT = "inherit",
 }
 

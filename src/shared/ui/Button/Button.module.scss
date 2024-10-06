@@ -22,6 +22,22 @@
   border-radius: 4px;
 }
 
+.danger {
+  background-color: var(--danger-color);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.outline {
+  border: 1px solid var(--link-color);
+  border-radius: 4px;
+
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 .inherit {
   background-color: inherit;
 }

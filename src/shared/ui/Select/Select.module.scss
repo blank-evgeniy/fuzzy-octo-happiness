@@ -1,0 +1,19 @@
+.Wrapper {
+  display: flex;
+  padding-top: 8px;
+}
+
+.label {
+  padding-right: 8px;
+}
+
+.select {
+  background-color: none;
+  outline: none;
+  padding: 2px;
+  border: 1px solid var(--primary-color);
+}
+
+.option {
+  background-color: var(--secondary-color);
+}

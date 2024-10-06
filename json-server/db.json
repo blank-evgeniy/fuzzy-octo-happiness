@@ -1,11 +1,27 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -15,13 +31,14 @@
     }
   ],
   "profile": {
-    "firstname": "Eugen",
+    "firstname": "Eugen123",
     "lastname": "Blank",
-    "age": 21,
-    "currency": "RUB",
+    "age": 212,
+    "currency": "EUR",
     "country:": "Russia",
-    "city": "Kaliningrad",
-    "username": "admin",
-    "avatar": "https://avatars.mds.yandex.net/i?id=3eadfd95a5d5a73c8a29b0efd208ea4d317ac0d1-8316909-images-thumbs&n=13"
+    "city": "Kaliningradas",
+    "username": "adminsa",
+    "avatar": "https://avatars.mds.yandex.net/i?id=3eadfd95a5d5a73c8a29b0efd208ea4d317ac0d1-8316909-images-thumbs&n=13",
+    "country": "Poland"
   }
 }
