@@ -45,7 +45,7 @@ const Input = memo((props: InputProps) => {
         readOnly={readOnly}
         className={styles.input}
         type={type}
-        value={value}
+        value={value === undefined ? "" : value}
         onChange={changeHandler}
         {...otherProps}
       />

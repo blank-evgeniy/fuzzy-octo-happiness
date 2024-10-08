@@ -5,5 +5,7 @@
   "Your lastname": "Yout lastname",
   "error": "Failed to upload profile data",
   "cancel": "cancel",
-  "save": "save"
+  "save": "save",
+  "Fill in all the fields": "Fill in all the fields",
+  "Enter the correct age": "Enter the correct age"
 }
